@@ -1,45 +1,60 @@
 
-function compare(a, b) {
-    if(a==b) {
-        console.log(true)
+const users = [
+    {name:'Temo', age:25},
+    {name:'Lasha', age:21},
+    {name:'Ana', age:28}
+]
+
+function compareAges(users) {
+  let minAge= users[0].age
+  let name
+  for (const item of users) {
+    if(minAge>item.age) {
+        minAge=item.age
+        name=item.name
     }
-    if(a!=b) {
-        console.log(false) 
-    }
+  }
+  return name
 }
-compare(5,5)
+console.log(compareAges(users))
+
+ 
 
 
-
-const celsius=function (farenheit) {
-    if(typeof farenheit=="number") {
-      const celsius=(5/9)*(farenheit-32)         
-        console.log(celsius)
-    }
-    else {
-        console.log(false)
+const user = {
+    name:'Tornike',
+    lastName:'Tskhadadze',
+    age: 19
 }
-    }
 
-celsius(41)
-
-function calculate(a, b, operation){
-    if (typeof a != "number" && typeof b != "number" &&
-    typeof operation != "+" && typeof operation !="-" && typeof
-   operation !="/" && typeof operation !="*" ){
-    return false
+const changeObject= function (user){
+    const newUser=user
+    return newUser
 }
-  else if (operation == "+")
-  return a+b
-  else if (operation =="-")
-  return a-b
-  else if (operation =="/")
-  return a/b
-  else if (operation =="*")
-  return a*b
 
+const newObject = changeObject(user)
+console.log(newObject)
+
+
+
+while (true) {
+  const firstplayer = parseInt(Math.random() * 10 -3);
+  const secondplayer = parseInt(Math.random() * 10 -3);
+
+  if (firstplayer === 3 && secondplayer === 3) {
+    console.log('Draw');
+    break
+    
+  } else if (firstplayer === 3) {
+    console.log('FirstPlayer  won the game');
+    break
+    
+  } else if (secondplayer === 3) {
+    console.log('SecondPlayer won the game');
+    break
+
+  }
 }
- console.log(calculate(5, 6, "*")) 
 
 
 
